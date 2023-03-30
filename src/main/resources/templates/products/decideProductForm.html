@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header" />
+
+<body>
+<div class="container">
+  <div th:replace="fragments/bodyHeader :: bodyHeader"/>
+
+  <form th:action="@{/products/new}" method="post">
+    <div class="jumbotron">
+      <h1>추가할 상품 선택</h1>
+      <p>
+        <a class="btn btn-lg btn-secondary"
+           href="/products/new/album">엘범</a>
+
+        <a class="btn btn-lg btn-dark"
+           href="/products/new/book">책</a>
+
+        <a class="btn btn-lg btn-info"
+           href="/products/new/movie">영화</a>
+      </p>
+    </div>
+  </form>
+  <br/>
+
+  <div th:replace="fragments/footer :: footer" />
+</div> <!-- /container -->
+</body>
+</html>
