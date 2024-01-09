@@ -13,6 +13,7 @@ import lombok.Setter;
 @Getter @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED) //생성자를 protected로 선언하여 다른 클래스 내에서 임의로 OrderProduct 인스턴스를 생성하지 못하도록 함
 public class OrderProduct {
+
     @Id @GeneratedValue
     @Column(name = "order_product_id")
     private Long id;

@@ -9,6 +9,7 @@ import lombok.Setter;
 @DiscriminatorValue("book") //DB에 저장할 때 구분하기 위함
 @Getter @Setter
 public class Book extends Product{
+
     private String author;
     private String isbn;
 

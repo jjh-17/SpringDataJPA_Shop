@@ -9,8 +9,7 @@ import lombok.Setter;
 @Entity
 @Getter @Setter //실무에서는 가급적 Setter는 지양해야한다. 오류 찾기가 힘들다.
 public class Delivery {
-    @Id
-    @GeneratedValue
+    @Id @GeneratedValue
     @Column(name = "delivery_id")
     private Long id;
 

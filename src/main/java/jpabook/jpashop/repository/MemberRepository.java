@@ -1,6 +1,7 @@
 package jpabook.jpashop.repository;
 
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import jpabook.jpashop.domain.Member;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
@@ -8,13 +9,13 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-@RequiredArgsConstructor //생성자 생략 어노테이션
+@RequiredArgsConstructor
 public class MemberRepository {
-    /*
-    //스프링 부트 JPA에서는 '@PersistenceContext'를 '@Autowired'로 대체 가능 ==> '@RequiredArgsConstructor'로 코드 간략화 가능
-    @PersistenceContext //엔티티 매니저를 빈으로 주입할 때 사용
-    private EntityManager entityManager;
-    */
+
+////    스프링 부트 JPA에서는 '@PersistenceContext'를 '@Autowired'로 대체 가능
+////    '@RequiredArgsConstructor'로 코드 간략화 가능
+//    @PersistenceContext
+//    private EntityManager entityManager;
 
     private final EntityManager entityManager;
 
@@ -31,7 +32,8 @@ public class MemberRepository {
     //이름으로 회원 검색 ==> 이름 중복이 가능하므로 list 형식으로 반환
     public List<Member> findMemberByName(String name) {
         //setParameter : Member 클래스의 name 필드에 인자로 받은 name이 바인딩 된다.
-        return entityManager.createQuery("select m from Member m where m.name = :name", Member.class)
+        return entityManager
+                .createQuery("select m from Member m where m.name = :name", Member.class)
                 .setParameter("name", name).getResultList();
     }
 
@@ -40,6 +42,5 @@ public class MemberRepository {
         return entityManager.createQuery("select m from Member m", Member.class)
                 .getResultList();
     }
-
-
+    
 }

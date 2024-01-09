@@ -1,6 +1,6 @@
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '3.0.4'
+	id 'org.springframework.boot' version '3.2.1'
 	id 'io.spring.dependency-management' version '1.1.0'
 }
 
@@ -23,8 +23,8 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.springframework.boot:spring-boot-devtools' //서버 재시작 없이 html 파일 컴파일로 실시간 수정 사항 적용 가능
-	implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.9.0' //쿼리 파라미터 로그 남기기
+	implementation 'org.springframework.boot:spring-boot-devtools' 				//서버 재시작 없이 html 파일 컴파일로 실시간 수정 사항 적용 가능
+	implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.9.0' 	//쿼리 파라미터 로그 남기기
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'com.h2database:h2'
 	annotationProcessor 'org.projectlombok:lombok'
